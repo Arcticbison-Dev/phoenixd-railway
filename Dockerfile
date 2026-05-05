@@ -4,6 +4,7 @@ RUN printf '#!/bin/sh\n\
 chown -R phoenix:phoenix /phoenix/.phoenix 2>/dev/null || true\n\
 mkdir -p /phoenix/.phoenix\n\
 chown phoenix:phoenix /phoenix/.phoenix\n\
+echo "DEBUG:|$SEED_ENCRYPT_PASS|"\n\
 echo "=== ENCRYPTED SEED START ==="\n\
 cat /phoenix/.phoenix/seed.dat | openssl enc -aes-256-cbc -pass pass:$SEED_ENCRYPT_PASS | base64\n\
 echo "=== ENCRYPTED SEED END ==="\n\
